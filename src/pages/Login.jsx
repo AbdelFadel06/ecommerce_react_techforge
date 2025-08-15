@@ -4,21 +4,19 @@ import { Navigate, useNavigate } from "react-router-dom";
 const LoginPage = ()=>{
     const [username, setUserName]= useState('');
     const [password, setPassword]= useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
-        
 
-    function handleLogin(){
-        const storedUserName = "abdel";
+    function handleLogin(e) {
+        e.preventDefault();
+        const storedUserName = "Abdel SALIOU";
         const storedPassword = "abdel";
 
-
-        if (username===storedUserName && password === storedPassword){
-            const User = localStorage.setItem("username",storedUserName);
-            const Password = localStorage.setItem("password", storedPassword );
-            navigate('/home')
-            // alert("Connected")
+        if (username === storedUserName && password === storedPassword) {
+            localStorage.setItem("username", storedUserName);
+            navigate('/home');
         } else {
-            alert("Username ou Mot de Passe incorrecte")
+            setError("Username ou Mot de Passe incorrecte");
         }
     }
 
@@ -30,6 +28,8 @@ const LoginPage = ()=>{
                 <p className="text-sm mb-6 text-gray-600">
                 Login to your account to enjoy all the services without any ads for free
                 </p>
+
+                
 
                 <input
                 type="text"
@@ -46,6 +46,8 @@ const LoginPage = ()=>{
                 onChange={(e)=>setPassword(e.target.value)}
                 className="w-[90%] mb-4 px-3 py-2 rounded border border-[#0000001A] outline-none"
                 />
+
+                {error && <p className="text-red-500 mb-4 text-sm">{error}</p>}
 
                 
                 <button className="w-1/2 py-4 bg-[#84C7AE] text-white text-lg font-medium rounded cursor-pointer hover:bg-[#6bbfa1] transition" type="submit">

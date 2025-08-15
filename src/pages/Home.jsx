@@ -1,14 +1,13 @@
 import Navbar from "../components/Navbar"
-import Filter from "../components/FilterRange"
-import ProductList from "../components/ProductList"
+import ProductsPage from "../pages/ProductsPage"
 
 
 const Home = () => {
     return(
-        <div className="w-full">
+        <div className="w-full space-y-10">
             <Navbar/>
-            <Filter/>
-            <ProductList/>
+            <ProductsPage/>
+            
 
         </div>
     )
