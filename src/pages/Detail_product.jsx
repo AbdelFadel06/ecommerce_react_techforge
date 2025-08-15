@@ -37,7 +37,14 @@ const DetailsProduct = () => {
                     <div className="">
                        
                     </div>
-                    <h1 className="text-gray-600"> {product.availability === 'IN_STOCK' ? 'En stock' : 'Rupture'}</h1>
+                    <h1 className={` text-xl ${product.availability==="IN_STOCK" ? 'text-green-700' : 'text-red-700' }`}> {product.availability === 'IN_STOCK' ? 'En stock' : 'Rupture'}</h1>
+
+                    {
+                        Array(5).fill(0).map((_, i) => (
+      <span key={i} className={i < product.stars ? 'text-yellow-400' : 'text-gray-300'}>
+        ★
+      </span>))
+                    }
                 </div>
             
             </div>
