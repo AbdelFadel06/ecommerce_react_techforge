@@ -1,14 +1,16 @@
-import Navbar from "../components/Navbar"
-import ProductsPage from "../pages/ProductsPage"
-
+import { useEffect } from 'react'
+import Navbar from '../components/Navbar'
+import ProductsPage from '../pages/ProductsPage'
 
 const Home = () => {
-    return(
-        <div className="w-full space-y-10">
-            <Navbar/>
-            <ProductsPage/>
-            
+    useEffect(() => {
+        document.title = 'Ecommerce - Accueil'
+    }, [])
 
+    return (
+        <div className="w-full space-y-10">
+            <Navbar />
+            <ProductsPage />
         </div>
     )
 }
