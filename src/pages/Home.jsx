@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
-import ProductsPage from '../pages/ProductsPage'
+import ProductList from '../components/ProductList'
 
 const Home = () => {
     useEffect(() => {
@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div className="w-full space-y-10">
             <Navbar />
-            <ProductsPage />
+            <ProductList />
         </div>
     )
 }

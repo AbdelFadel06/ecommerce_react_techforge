@@ -1,16 +1,17 @@
 import { useNavigate } from 'react-router-dom'
 import avatar from '../assets/avatar.jpg'
+import { useAuth } from "../auth/AuthContext";
+
 
 const Navbar = () => {
     const username = localStorage.getItem('username')
     const navigate = useNavigate()
+      const { logout } = useAuth();
 
     const handleLogout = () => {
-        localStorage.removeItem('username')
-        localStorage.removeItem('password')
-
-        navigate('/')
-    }
+    logout();
+    navigate("/", { replace: true });
+  };
 
     return (
         <>

@@ -7,7 +7,7 @@ const Filter = ({ onFilter }) => {
         name: '',
         category: '',
         status: '',
-    })
+    });
 
     const [categories, setCategories] = useState([])
 
